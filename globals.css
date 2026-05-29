@@ -1,0 +1,54 @@
+:root {
+  --bg: #050712;
+  --panel: #0F1424;
+  --panel-hover: #161B2E;
+  --line: rgba(148, 163, 184, 0.12);
+  --text: #E5EDF7;
+  --muted: #8DA2BD;
+  --accent: #70E1FF;
+  --accent-2: #9B8CFF;
+  --danger: #FF657F;
+  --success: #58F2A0;
+  --gold: #FFD166;
+  --radius-lg: 24px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.main-column {
+  padding: 40px 48px;
+  max-width: 1600px;
+}
+
+.panel, .metric-card, .agent-card, .memory-card, .workflow-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.panel:hover, .metric-card:hover, .agent-card:hover {
+  border-color: rgba(112, 225, 255, 0.2);
+  background: var(--panel-hover);
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.metric-grid, .agent-grid, .memory-grid, .workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
